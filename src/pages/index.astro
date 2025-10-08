@@ -1,32 +1,33 @@
----
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+// Use the imported constants for cleaner, centralized metadata
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={Peroj Blog} description={This page is under construction} />
+		<!-- FIX: The prop values (title and description) must be wrapped in quotes
+             if they are literal strings, OR be passed as defined JS variables.
+             We use the imported constants here for best practice.
+        -->
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🙇‍♂️ Hello, Everyone!</h1>
-			<p>
-				Welcome to the official My page. This
-				template is just a place holder as my page is under consruction.
+		<main class="max-w-4xl mx-auto p-4 sm:p-6">
+			<h1 class="text-4xl font-extrabold mb-4">🙇‍♂️ Hello, Everyone!</h1>
+			<p class="mb-4 text-gray-700">
+				Welcome to the official **{{ SITE_TITLE }}**. This page is currently under construction!
 			</p>
-			<p>
-				
+			<p class="mb-8 text-gray-700">
+				I'm working hard to bring you something great. In the meantime, feel free to check out the
+				<a href="/" class="text-blue-600 hover:underline font-medium">home page</a> or connect with me via the links in the footer.
 			</p>
-			
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-			
-			</p>
+
+			<!-- Cleaned up incomplete/empty tags -->
+
 		</main>
 		<Footer />
 	</body>
